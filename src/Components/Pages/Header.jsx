@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div>
-            <nav className='flex items-center justify-between'>
+            <nav className=' text-white h-20 px-20 flex items-center justify-between'>
                 <Link to="/">
                     <span className='text-2xl'>R.B.B.S</span>
                 </Link>
@@ -14,6 +14,7 @@ const Header = () => {
                     <Link to="/About">About</Link>
                     <Link to="/Contact">Contact</Link>
                     <Link to="/Courses">Courses</Link>
+                    <Link to="/Login">Login</Link>
                 </ul>
             </nav>
         </div>
