@@ -83,7 +83,9 @@ const Contex = ({ children }) => {
 
 
 
-    return <contexM.Provider value={userInfo} />
+    return <contexM.Provider value={userInfo} >
+        {children}
+    </contexM.Provider>
 
 
 
