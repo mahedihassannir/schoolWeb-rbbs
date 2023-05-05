@@ -12,6 +12,7 @@ import Conteact from "../Pages/Conteact";
 import Ourteachers from "../Pages/Ourteachers";
 import ContinueCourse from "../Pages/continueCourse";
 import Register from "../Pages/Register";
+import PriateRoute from "../private/PriateRoute";
 
 
 
@@ -50,7 +51,10 @@ let router = createBrowserRouter([
             },
             {
                 path: "Courses",
-                element: <ContinueCourse></ContinueCourse>
+                element: <PriateRoute>
+
+                    <ContinueCourse></ContinueCourse>
+                </PriateRoute>
 
             },
 

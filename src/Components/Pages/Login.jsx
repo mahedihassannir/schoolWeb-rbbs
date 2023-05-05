@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { contexM } from '../authProvider/Contex';
 
 const Login = () => {
@@ -9,6 +9,19 @@ const Login = () => {
     let [visible, SetHide] = useState(true)
 
     let { loginUserWithEmailPass } = useContext(contexM)
+
+
+
+
+    const Navigate = useNavigate()
+
+    let Location = useLocation()
+
+
+
+
+    let last = Location.state?.form.pathname || "/"
+
 
 
     let handleLogin = (e) => {
@@ -23,6 +36,7 @@ const Login = () => {
             .then(res => {
                 let logedUser = res.user
                 console.log(logedUser);
+                Navigate(last)
             })
             .catch(err => {
                 console.log(err);

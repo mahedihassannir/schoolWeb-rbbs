@@ -4,7 +4,21 @@ import { contexM } from '../authProvider/Contex';
 
 const Header = () => {
 
-    let { user } = useContext(contexM)
+    let { user, handleLogout } = useContext(contexM)
+
+
+    let logout = () => {
+
+        handleLogout()
+            .then(res => {
+                let singOut = res.user
+                console.log(singOut);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
 
     return (
         <div>
@@ -18,10 +32,20 @@ const Header = () => {
                     <Link to="/About">About</Link>
                     <Link to="/Contact">Contact</Link>
                     <Link to="/Courses">Courses</Link>
-                    <Link to="/Login">Login</Link>
+
 
                     {
-                        user ? "mahedi" : "no user"
+                        user ? <span>{user.email}</span> : <Link to="/Login">Login  </Link>
+                    }
+
+                    {
+                        user &&
+
+                        <div>
+                            <button onClick={logout}>logout</button>
+                        </div>
+
+
                     }
 
                 </ul>
